@@ -345,6 +345,7 @@ func makeStatefulSetSpec(p monitoringv1.Prometheus, c *operator.Config, shard in
 	promArgs := []string{
 		"-web.console.templates=/etc/prometheus/consoles",
 		"-web.console.libraries=/etc/prometheus/console_libraries",
+		"-web.max-connections=1000",
 	}
 
 	retentionTimeFlag := "-storage.tsdb.retention="
